@@ -1,0 +1,5 @@
+.idea
+
+docker/db/mariadb/data
+
+.php-cs-fixer.cache

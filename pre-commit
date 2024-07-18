@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# ^ Note the above "shebang" line. This says "This is an executable shell script"
+# Name this script "pre-commit" and place it in the ".git/hooks/" directory
+
+# If any command fails, exit immediately with that command's exit status
+set -eo pipefail
+
+application/vendor/bin/php-cs-fixer check --config application/.php-cs-fixer.dist.php --verbose --diff
+echo "PHPCSFixer passed!"
+
+application/vendor/bin/phpstan --memory-limit=1G --configuration=application/phpstan.dist.neon
+echo "PHPStan passed!"

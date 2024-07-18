@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>List products</h1>
+    Page {{ page }}/{{ pages_count }}<br>
+    Displaying {{ products|length }}/{{ total }}<br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+        <tr>
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.code }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+        </tr>
+        {% endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

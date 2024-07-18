@@ -1,0 +1,7 @@
+controllersProduct:
+    resource: ../src/Product/Application/Controller/
+    type: attribute
+
+ControllerSupplier:
+    resource: ../src/Supplier/Application/Controller/
+    type: attribute
